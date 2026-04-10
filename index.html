@@ -19,7 +19,7 @@ body{
   background:#f4f6f8;
 }
 
-/* 🔥 HEADER UNIFICADO (IGUAL EN TODAS LAS PÁGINAS) */
+/* 🔥 HEADER */
 header{
   background:#000;
   height:70px;
@@ -62,7 +62,6 @@ nav a:hover{
   color:white;
 }
 
-/* OVERLAY */
 .hero::after{
   content:'';
   position:absolute;
@@ -70,7 +69,6 @@ nav a:hover{
   background:rgba(0,0,0,0.65);
 }
 
-/* CONTENIDO */
 .hero-content{
   position:relative;
   z-index:2;
@@ -91,7 +89,6 @@ p{
   opacity:0.9;
 }
 
-/* BOTÓN */
 .btn{
   margin-top:25px;
   display:inline-block;
@@ -108,6 +105,60 @@ p{
   transform:scale(1.05);
 }
 
+/* 🔥 NUEVA SECCIÓN EMPRESARIAL */
+.empresa{
+  padding:80px 20px;
+  background:white;
+  text-align:center;
+}
+
+.empresa-contenido{
+  max-width:900px;
+  margin:auto;
+}
+
+.empresa h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.empresa p{
+  color:#555;
+  line-height:1.6;
+}
+
+/* 🔷 BLOQUES */
+.stats{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+  gap:20px;
+}
+
+.stat{
+  background:#000;
+  color:white;
+  padding:25px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.stat:hover{
+  transform:translateY(-5px);
+}
+
+.stat h3{
+  color:#ffb400;
+  font-size:26px;
+}
+
+.stat span{
+  display:block;
+  margin-top:8px;
+  font-size:14px;
+  opacity:0.8;
+}
+
 /* RESPONSIVE */
 @media(max-width:600px){
   .hero-logo img{height:140px;}
@@ -119,7 +170,6 @@ p{
 
 <body>
 
-<!-- 🔥 HEADER UNIFICADO -->
 <header>
   <nav>
     <a href="./index.html">Inicio</a>
@@ -140,6 +190,47 @@ p{
     <p>Calidad, confianza y experiencia en cada proyecto</p>
 
     <a class="btn" href="contacto.html">Contacto</a>
+
+  </div>
+
+</section>
+
+<!-- 🔥 NUEVA SECCIÓN -->
+<section class="empresa">
+
+  <div class="empresa-contenido">
+
+    <h2>Grupo Cigar</h2>
+
+    <p>
+      Somos una empresa 100% mexicana con más de 20 años de experiencia en la industria metalmecánica. 
+      Nuestra trayectoria, capacidad de respuesta y altos estándares de calidad nos han permitido desarrollar 
+      proyectos para empresas líderes a nivel nacional, cumpliendo con precisión, eficiencia y excelencia en cada etapa.
+    </p>
+
+    <div class="stats">
+
+      <div class="stat">
+        <h3>20+</h3>
+        <span>Años de experiencia</span>
+      </div>
+
+      <div class="stat">
+        <h3>Calidad</h3>
+        <span>Estándares industriales</span>
+      </div>
+
+      <div class="stat">
+        <h3>Entrega</h3>
+        <span>Cumplimiento garantizado</span>
+      </div>
+
+      <div class="stat">
+        <h3>Capacidad</h3>
+        <span>Equipo técnico especializado</span>
+      </div>
+
+    </div>
 
   </div>
 
