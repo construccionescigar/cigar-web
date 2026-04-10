@@ -6,6 +6,7 @@
 <title>CIGAR | Inicio</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -13,23 +14,35 @@
   font-family:Arial,sans-serif;
 }
 
+/* BODY */
 body{
   background:#f4f6f8;
 }
 
-/* 🔥 NAV UNIFICADO (IGUAL QUE SERVICIOS) */
-nav{
+/* 🔥 HEADER UNIFICADO (IGUAL EN TODAS LAS PÁGINAS) */
+header{
   background:#000;
-  padding:15px;
-  text-align:center;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  z-index:3;
+}
+
+nav{
+  display:flex;
+  align-items:center;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  margin:0 15px;
+  margin:0 20px;
   font-size:16px;
   font-weight:bold;
+  line-height:70px;
+  display:inline-block;
   transition:0.3s;
 }
 
@@ -49,6 +62,7 @@ nav a:hover{
   color:white;
 }
 
+/* OVERLAY */
 .hero::after{
   content:'';
   position:absolute;
@@ -56,6 +70,7 @@ nav a:hover{
   background:rgba(0,0,0,0.65);
 }
 
+/* CONTENIDO */
 .hero-content{
   position:relative;
   z-index:2;
@@ -76,6 +91,7 @@ p{
   opacity:0.9;
 }
 
+/* BOTÓN */
 .btn{
   margin-top:25px;
   display:inline-block;
@@ -85,23 +101,32 @@ p{
   font-weight:bold;
   text-decoration:none;
   border-radius:6px;
+  transition:0.3s;
 }
 
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* RESPONSIVE */
 @media(max-width:600px){
   .hero-logo img{height:140px;}
   h1{font-size:30px;}
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- 🔥 NAV NUEVO UNIFICADO -->
-<nav>
-  <a href="./index.html">Inicio</a>
-  <a href="./servicios.html">Servicios</a>
-  <a href="./contacto.html">Contacto</a>
-</nav>
+<!-- 🔥 HEADER UNIFICADO -->
+<header>
+  <nav>
+    <a href="./index.html">Inicio</a>
+    <a href="./servicios.html">Servicios</a>
+    <a href="./contacto.html">Contacto</a>
+  </nav>
+</header>
 
 <section class="hero">
 
