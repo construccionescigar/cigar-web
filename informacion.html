@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CIGAR | Información</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#111;
+  color:white;
+}
+
+/* HEADER */
+header{
+  background:#000;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 20px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ffb400;
+}
+
+/* CONTENIDO */
+.container{
+  padding:80px 20px;
+  text-align:center;
+}
+
+h1{
+  font-size:36px;
+  margin-bottom:40px;
+}
+
+/* TABS */
+.tabs{
+  margin-bottom:30px;
+}
+
+.tab{
+  background:none;
+  border:2px solid #ffb400;
+  color:#ffb400;
+  padding:10px 20px;
+  margin:0 10px;
+  cursor:pointer;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+.tab.active,
+.tab:hover{
+  background:#ffb400;
+  color:black;
+}
+
+/* CONTENIDO */
+.tab-contenido{
+  max-width:800px;
+  margin:auto;
+  display:none;
+  color:#ccc;
+  line-height:1.7;
+}
+
+.tab-contenido.active{
+  display:block;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="./index.html">Inicio</a>
+    <a href="./informacion.html">Información</a>
+    <a href="./servicios.html">Servicios</a>
+    <a href="./contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <h1>Información Corporativa</h1>
+
+  <div class="tabs">
+    <button class="tab active" onclick="mostrarTab('vision', event)">Visión</button>
+    <button class="tab" onclick="mostrarTab('trayectoria', event)">Trayectoria</button>
+  </div>
+
+  <div id="vision" class="tab-contenido active">
+    <p>
+      Ser una empresa líder en el sector metalmecánico a nivel nacional, reconocida por la calidad, 
+      innovación y cumplimiento en cada uno de nuestros proyectos, generando confianza y relaciones 
+      duraderas con nuestros clientes.
+    </p>
+  </div>
+
+  <div id="trayectoria" class="tab-contenido">
+    <p>
+      Con más de 20 años de experiencia, Grupo Cigar ha desarrollado proyectos industriales de gran relevancia 
+      a nivel nacional, consolidando su crecimiento a través de la excelencia operativa, compromiso y capacidad técnica.
+    </p>
+  </div>
+
+</div>
+
+<script>
+function mostrarTab(tab, e){
+  const contenidos = document.querySelectorAll('.tab-contenido');
+  const tabs = document.querySelectorAll('.tab');
+
+  contenidos.forEach(c => c.classList.remove('active'));
+  tabs.forEach(t => t.classList.remove('active'));
+
+  document.getElementById(tab).classList.add('active');
+  e.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
