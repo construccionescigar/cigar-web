@@ -14,12 +14,11 @@
   font-family:Arial,sans-serif;
 }
 
-/* BODY */
 body{
   background:#f4f6f8;
 }
 
-/* 🔥 HEADER */
+/* HEADER */
 header{
   background:#000;
   height:70px;
@@ -27,22 +26,18 @@ header{
   align-items:center;
   justify-content:center;
   position:relative;
-  z-index:3;
+  z-index:5;
 }
 
 nav{
   display:flex;
-  align-items:center;
 }
 
 nav a{
   color:white;
   text-decoration:none;
   margin:0 20px;
-  font-size:16px;
   font-weight:bold;
-  line-height:70px;
-  display:inline-block;
   transition:0.3s;
 }
 
@@ -50,25 +45,54 @@ nav a:hover{
   color:#ffb400;
 }
 
-/* HERO */
+/* 🔥 HERO COLLAGE */
 .hero{
   height:85vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
   position:relative;
-  background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
   color:white;
+  overflow:hidden;
 }
 
+/* GRID COLLAGE */
+.hero-grid{
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  grid-template-rows:repeat(2,1fr);
+}
+
+.hero-grid div{
+  background-size:cover;
+  background-position:center;
+  transition:transform 6s ease;
+}
+
+/* IMÁGENES */
+.img1{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/471158468_8715014271927679_9022288748511387177_n_m8taig.jpg');}
+.img2{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/123338669_3296920357070458_6257777802939192835_n_fkdboq.jpg');}
+.img3{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/179718345_3769656176463538_6865726077226687272_n_j6f1oa.jpg');}
+.img4{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/471168483_8715014321927674_8310972807616940147_n_vkqkbh.jpg');}
+
+/* EFECTO ZOOM LENTO */
+.hero:hover .hero-grid div{
+  transform:scale(1.08);
+}
+
+/* OVERLAY */
 .hero::after{
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,0.7);
+  z-index:1;
 }
 
+/* CONTENIDO */
 .hero-content{
   position:relative;
   z-index:2;
@@ -105,7 +129,7 @@ p{
   transform:scale(1.05);
 }
 
-/* 🔥 NUEVA SECCIÓN EMPRESARIAL */
+/* EMPRESA */
 .empresa{
   padding:80px 20px;
   background:white;
@@ -127,7 +151,6 @@ p{
   line-height:1.6;
 }
 
-/* 🔷 BLOQUES */
 .stats{
   margin-top:50px;
   display:grid;
@@ -163,6 +186,11 @@ p{
 @media(max-width:600px){
   .hero-logo img{height:140px;}
   h1{font-size:30px;}
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:repeat(4,1fr);
+  }
 }
 
 </style>
@@ -181,6 +209,15 @@ p{
 
 <section class="hero">
 
+  <!-- 🔥 COLLAGE -->
+  <div class="hero-grid">
+    <div class="img1"></div>
+    <div class="img2"></div>
+    <div class="img3"></div>
+    <div class="img4"></div>
+  </div>
+
+  <!-- CONTENIDO -->
   <div class="hero-content">
 
     <div class="hero-logo">
@@ -196,9 +233,7 @@ p{
 
 </section>
 
-<!-- 🔥 NUEVA SECCIÓN -->
 <section class="empresa">
-
   <div class="empresa-contenido">
 
     <h2>Grupo Cigar</h2>
@@ -206,11 +241,10 @@ p{
     <p>
       Somos una empresa 100% mexicana con más de 20 años de experiencia en la industria metalmecánica. 
       Nuestra trayectoria, capacidad de respuesta y altos estándares de calidad nos han permitido desarrollar 
-      proyectos para empresas líderes a nivel nacional, cumpliendo con precisión, eficiencia y excelencia en cada etapa.
+      proyectos para empresas líderes a nivel nacional.
     </p>
 
     <div class="stats">
-
       <div class="stat">
         <h3>20+</h3>
         <span>Años de experiencia</span>
@@ -230,11 +264,9 @@ p{
         <h3>Capacidad</h3>
         <span>Equipo técnico especializado</span>
       </div>
-
     </div>
 
   </div>
-
 </section>
 
 </body>
