@@ -2,35 +2,57 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cigar Servicios</title>
 
 <style>
+
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#f4f4f4;
 }
 
-nav{
+/* 🔥 HEADER UNIFICADO (MISMO EN TODAS LAS PÁGINAS) */
+header{
   background:#000;
-  padding:15px;
-  text-align:center;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  z-index:3;
+}
+
+nav{
+  display:flex;
+  align-items:center;
 }
 
 nav a{
   color:white;
-  margin:0 15px;
   text-decoration:none;
+  margin:0 20px;
+  font-size:16px;
   font-weight:bold;
+  line-height:70px;
+  display:inline-block;
+  transition:0.3s;
 }
 
-header{
+nav a:hover{
+  color:#ffb400;
+}
+
+/* HEADER TITULO */
+.page-header{
   background:#111;
   color:white;
   text-align:center;
   padding:25px;
 }
 
+/* SERVICIOS */
 .servicios{
   padding:50px 20px;
   text-align:center;
@@ -67,22 +89,26 @@ header{
   margin:0;
   padding:12px;
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- 🔥 NAVBAR -->
-<nav>
-  <a href="./index.html">Inicio</a>
-  <a href="./servicios.html">Servicios</a>
-  <a href="./contacto.html">Contacto</a>
-</nav>
-
+<!-- 🔥 HEADER UNIFICADO -->
 <header>
-<h1>Estructuras y Construcciones Cigar</h1>
-<p>Servicios industriales especializados</p>
+  <nav>
+    <a href="./index.html">Inicio</a>
+    <a href="./servicios.html">Servicios</a>
+    <a href="./contacto.html">Contacto</a>
+  </nav>
 </header>
+
+<!-- TITULO DE PÁGINA -->
+<div class="page-header">
+  <h1>Estructuras y Construcciones Cigar</h1>
+  <p>Servicios industriales especializados</p>
+</div>
 
 <section class="servicios">
 <h2>Servicios</h2>
