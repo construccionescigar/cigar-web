@@ -26,7 +26,7 @@ body::before{
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.70);
+  background:rgba(0,0,0,0.72);
   z-index:1;
 }
 
@@ -59,9 +59,20 @@ nav a:hover{
   z-index:2;
   text-align:center;
   color:white;
-  padding:80px 20px;
+  padding:60px 20px;
+  animation:fadeUp 0.9s ease-out;
 }
 
+/* LOGO */
+.logo-top{
+  margin-bottom:15px;
+}
+
+.logo-top img{
+  height:160px;
+}
+
+/* TITULO */
 h1{
   font-size:44px;
   margin-bottom:10px;
@@ -72,26 +83,26 @@ p{
   opacity:0.9;
 }
 
-/* CAJA PRINCIPAL */
+/* CAJA */
 .box{
-  margin-top:40px;
+  margin-top:35px;
   display:inline-block;
   padding:35px 30px;
   background:rgba(0,0,0,0.55);
   border:1px solid rgba(255,255,255,0.15);
   border-radius:14px;
   backdrop-filter: blur(6px);
-  min-width:280px;
+  animation:fadeUp 1.2s ease-out;
 }
 
-/* TEXTO INTERNO */
+/* TEXTO */
 .box p{
   margin-bottom:15px;
   font-size:15px;
   opacity:0.9;
 }
 
-/* BOTONES GENERALES */
+/* BOTONES */
 .btn{
   display:block;
   width:240px;
@@ -110,11 +121,11 @@ p{
 }
 
 .wa:hover{
-  transform:scale(1.05);
+  transform:scale(1.06);
   background:#1ebe5d;
 }
 
-/* LLAMADA */
+/* CALL */
 .call{
   background:#111;
   color:white;
@@ -122,19 +133,54 @@ p{
 }
 
 .call:hover{
-  transform:scale(1.05);
-  background:#000;
+  transform:scale(1.06);
 }
 
-/* EMAIL */
+/* MAIL */
 .mail{
   background:#e0e0e0;
   color:#000;
 }
 
 .mail:hover{
-  transform:scale(1.05);
+  transform:scale(1.06);
   background:#cfcfcf;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* WHATSAPP FLOTANTE */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  background:#25D366;
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  z-index:9999;
+  transition:0.3s;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.1);
 }
 
 </style>
@@ -151,6 +197,11 @@ p{
 </header>
 
 <div class="content">
+
+  <!-- LOGO -->
+  <div class="logo-top">
+    <img src="https://res.cloudinary.com/deod0oalc/image/upload/LogoCigar_pybcfp.png" alt="CIGAR">
+  </div>
 
   <h1>Contacto</h1>
   <p>Atención inmediata para cotizaciones industriales</p>
@@ -176,6 +227,11 @@ p{
   </div>
 
 </div>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/5215512345678" class="whatsapp-float" target="_blank">
+  💬
+</a>
 
 </body>
 </html>
