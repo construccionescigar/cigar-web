@@ -14,9 +14,23 @@
   font-family:Arial,sans-serif;
 }
 
+/* 🔥 FONDO GLOBAL (SIN RECORTE) */
 body{
-  background:#111;
   color:white;
+
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/dc9ae699-debc-4db3-a02b-761af378e440_ym67mn.jpg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+/* overlay global elegante */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  z-index:-1;
 }
 
 /* HEADER */
@@ -26,6 +40,9 @@ header{
   display:flex;
   align-items:center;
   justify-content:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 nav a{
@@ -40,25 +57,11 @@ nav a:hover{
   color:#ffb400;
 }
 
-/* 🔥 CONTENEDOR CON NUEVA IMAGEN */
+/* CONTENEDOR AHORA TRANSPARENTE */
 .container{
   padding:100px 20px;
   text-align:center;
   position:relative;
-  background:url('https://res.cloudinary.com/deod0oalc/image/upload/dc9ae699-debc-4db3-a02b-761af378e440_ym67mn.jpg') center/cover no-repeat;
-}
-
-/* OVERLAY */
-.container::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.75);
-}
-
-.container *{
-  position:relative;
-  z-index:2;
 }
 
 /* TÍTULO */
@@ -107,6 +110,11 @@ h1{
   color:#ddd;
   line-height:1.8;
   font-size:17px;
+
+  background:rgba(0,0,0,0.55);
+  padding:25px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.1);
 }
 
 .tab-contenido.active{
@@ -137,7 +145,6 @@ h1{
     <button class="tab" onclick="mostrarTab('cobertura', event)">Cobertura</button>
   </div>
 
-  <!-- VISIÓN -->
   <div id="vision" class="tab-contenido active">
     <p>
       Ser una empresa líder en el sector metalmecánico a nivel nacional, reconocida por la calidad, 
@@ -146,7 +153,6 @@ h1{
     </p>
   </div>
 
-  <!-- TRAYECTORIA -->
   <div id="trayectoria" class="tab-contenido">
     <p>
       Con más de 20 años de experiencia, Grupo Cigar ha desarrollado proyectos industriales de gran relevancia 
@@ -155,7 +161,6 @@ h1{
     </p>
   </div>
 
-  <!-- 🔥 COBERTURA NUEVA -->
   <div id="cobertura" class="tab-contenido">
     <p>
       Contamos con cobertura a nivel nacional, participando en proyectos a lo largo de todo México, desde el norte 
