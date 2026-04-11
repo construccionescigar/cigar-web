@@ -10,13 +10,11 @@
 body{
   margin:0;
   font-family:Arial, sans-serif;
-
-  /* 🔥 FONDO INDUSTRIAL NUEVO */
   background:#0a0f14;
   color:white;
 }
 
-/* 🔥 HEADER UNIFICADO */
+/* HEADER */
 header{
   background:#000;
   height:70px;
@@ -47,7 +45,7 @@ nav a:hover{
   color:#ffb400;
 }
 
-/* TITULO PRINCIPAL */
+/* TITULO */
 .page-header{
   background:#111a22;
   color:white;
@@ -95,7 +93,6 @@ nav a:hover{
   box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
-/* IMAGEN */
 .servicio img{
   width:100%;
   height:180px;
@@ -103,11 +100,38 @@ nav a:hover{
   display:block;
 }
 
-/* TEXTO */
 .servicio h3{
   margin:0;
   padding:12px;
   color:white;
+}
+
+/* 🧱 SLOGANS ESQUINAS */
+.corner-box{
+  position:fixed;
+  top:90px;
+  width:280px;
+  padding:14px 16px;
+  background:rgba(0,0,0,0.55);
+  border:1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  color:rgba(255,255,255,0.9);
+  font-size:14px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  line-height:1.4;
+  transition:0.5s ease;
+  z-index:999;
+}
+
+.corner-left{ left:18px; text-align:left; }
+.corner-right{ right:18px; text-align:right; }
+
+@media(max-width:600px){
+  .corner-box{
+    width:180px;
+    font-size:11px;
+  }
 }
 
 </style>
@@ -115,7 +139,6 @@ nav a:hover{
 
 <body>
 
-<!-- HEADER -->
 <header>
 <nav>
   <a href="./index.html">Inicio</a>
@@ -124,6 +147,10 @@ nav a:hover{
   <a href="./contacto.html">Contacto</a>
 </nav>
 </header>
+
+<!-- 🧱 SLOGANS -->
+<div class="corner-box corner-left" id="sloganLeft"></div>
+<div class="corner-box corner-right" id="sloganRight"></div>
 
 <!-- TITULO -->
 <div class="page-header">
@@ -170,6 +197,48 @@ nav a:hover{
 </div>
 
 </section>
+
+<script>
+
+const slogansLeft = [
+"Fabricación de acero estructural de alta precisión",
+"Montaje industrial con ingeniería especializada",
+"Soluciones metálicas para grandes proyectos",
+"Calidad en cada estructura fabricada",
+"Procesos industriales de alto rendimiento",
+"Construcción metálica de nivel profesional"
+];
+
+const slogansRight = [
+"Estructuras diseñadas para máxima resistencia",
+"Montaje seguro y eficiente en obra",
+"Precisión en cada unión estructural",
+"Cumplimiento en proyectos industriales",
+"Ingeniería aplicada al acero estructural",
+"Resultados que sostienen grandes obras"
+];
+
+let i = 0;
+
+function updateSlogans(){
+  document.getElementById("sloganLeft").style.opacity = 0;
+  document.getElementById("sloganRight").style.opacity = 0;
+
+  setTimeout(() => {
+    document.getElementById("sloganLeft").innerText = slogansLeft[i];
+    document.getElementById("sloganRight").innerText = slogansRight[i];
+
+    document.getElementById("sloganLeft").style.opacity = 1;
+    document.getElementById("sloganRight").style.opacity = 1;
+
+    i = (i + 1) % slogansLeft.length;
+  }, 400);
+}
+
+updateSlogans();
+setInterval(updateSlogans, 6000);
+
+</script>
 
 </body>
 </html>
