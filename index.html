@@ -57,6 +57,30 @@ nav a:hover{
   overflow:hidden;
 }
 
+/* ESLOGANES ESQUINAS */
+.corner-slogan{
+  position:absolute;
+  top:20px;
+  z-index:3;
+  color:rgba(255,255,255,0.85);
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  max-width:240px;
+  line-height:1.4;
+  transition:0.5s ease;
+}
+
+.corner-left{
+  left:20px;
+  text-align:left;
+}
+
+.corner-right{
+  right:20px;
+  text-align:right;
+}
+
 /* GRID COLLAGE */
 .hero-grid{
   position:absolute;
@@ -77,7 +101,7 @@ nav a:hover{
 .img3{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/179718345_3769656176463538_6865726077226687272_n_j6f1oa.jpg');}
 .img4{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/471168483_8715014321927674_8310972807616940147_n_vkqkbh.jpg');}
 
-/* OVERLAY (SE CONSERVA) */
+/* OVERLAY */
 .hero::after{
   content:'';
   position:absolute;
@@ -86,7 +110,7 @@ nav a:hover{
   z-index:1;
 }
 
-/* CONTENIDO HERO */
+/* CONTENIDO */
 .hero-content{
   position:relative;
   z-index:2;
@@ -123,7 +147,7 @@ p{
   transform:scale(1.05);
 }
 
-/* EMPRESA (AHORA CONTINUIDAD OSCURA DEL HERO) */
+/* EMPRESA */
 .empresa{
   padding:80px 20px;
   background:#0b0b0b;
@@ -139,7 +163,6 @@ p{
 .empresa h2{
   font-size:32px;
   margin-bottom:20px;
-  color:white;
 }
 
 .empresa p{
@@ -184,9 +207,9 @@ p{
   .hero-logo img{height:260px;}
   h1{font-size:30px;}
 
-  .hero-grid{
-    grid-template-columns:1fr;
-    grid-template-rows:repeat(4,1fr);
+  .corner-slogan{
+    font-size:11px;
+    max-width:160px;
   }
 }
 
@@ -205,6 +228,10 @@ p{
 </header>
 
 <section class="hero">
+
+  <!-- ESQUINAS -->
+  <div class="corner-slogan corner-left" id="sloganLeft"></div>
+  <div class="corner-slogan corner-right" id="sloganRight"></div>
 
   <div class="hero-grid">
     <div class="img1"></div>
@@ -263,6 +290,64 @@ p{
 
   </div>
 </section>
+
+<script>
+const slogansLeft = [
+  "Ingeniería estructural de alto rendimiento",
+  "Precisión en acero para grandes proyectos",
+  "Solidez que sostiene la industria moderna",
+  "Estructuras diseñadas para perdurar",
+  "Ingeniería aplicada al acero industrial",
+  "Fabricación con precisión estructural",
+  "Donde la ingeniería toma forma en acero",
+  "Soluciones metálicas de alto nivel",
+  "Estructuras para proyectos exigentes",
+  "Calidad estructural sin concesiones",
+  "Diseño y fabricación en equilibrio perfecto",
+  "Acero con visión de ingeniería",
+  "Soporte estructural para grandes obras",
+  "Precisión en cada unión estructural",
+  "Ingeniería que construye confianza"
+];
+
+const slogansRight = [
+  "Precisión en acero para grandes proyectos",
+  "Ingeniería estructural de alto rendimiento",
+  "Solidez que sostiene la industria moderna",
+  "Estructuras diseñadas para perdurar",
+  "Fabricación con precisión estructural",
+  "Soluciones metálicas de alto nivel",
+  "Donde la ingeniería toma forma en acero",
+  "Estructuras para proyectos exigentes",
+  "Calidad estructural sin concesiones",
+  "Diseño y fabricación en equilibrio perfecto",
+  "Acero con visión de ingeniería",
+  "Soporte estructural para grandes obras",
+  "Precisión en cada unión estructural",
+  "Ingeniería que construye confianza",
+  "Estructuras que definen el futuro"
+];
+
+let i = 0;
+
+function updateSlogans(){
+  document.getElementById("sloganLeft").style.opacity = 0;
+  document.getElementById("sloganRight").style.opacity = 0;
+
+  setTimeout(() => {
+    document.getElementById("sloganLeft").innerText = slogansLeft[i];
+    document.getElementById("sloganRight").innerText = slogansRight[i];
+
+    document.getElementById("sloganLeft").style.opacity = 1;
+    document.getElementById("sloganRight").style.opacity = 1;
+
+    i = (i + 1) % slogansLeft.length;
+  }, 300);
+}
+
+updateSlogans();
+setInterval(updateSlogans, 4000);
+</script>
 
 </body>
 </html>
