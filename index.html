@@ -77,6 +77,15 @@ nav a:hover{
 .img3{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/179718345_3769656176463538_6865726077226687272_n_j6f1oa.jpg');}
 .img4{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/471168483_8715014321927674_8310972807616940147_n_vkqkbh.jpg');}
 
+/* OVERLAY (SE CONSERVA) */
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+}
+
 /* CONTENIDO */
 .hero-content{
   position:relative;
@@ -84,7 +93,7 @@ nav a:hover{
 }
 
 .hero-logo img{
-  height:220px;
+  height:440px; /* 🔥 DOBLE DEL ORIGINAL */
   margin-bottom:20px;
 }
 
@@ -169,7 +178,7 @@ p{
 
 /* RESPONSIVE */
 @media(max-width:600px){
-  .hero-logo img{height:140px;}
+  .hero-logo img{height:260px;} /* proporcional en móvil */
   h1{font-size:30px;}
 
   .hero-grid{
