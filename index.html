@@ -38,7 +38,6 @@ nav a{
   text-decoration:none;
   margin:0 20px;
   font-weight:bold;
-  transition:0.3s;
 }
 
 nav a:hover{
@@ -57,27 +56,32 @@ nav a:hover{
   overflow:hidden;
 }
 
-/* ESLOGANES ESQUINAS */
-.corner-slogan{
+/* 🧱 CUADROS ESQUINAS (tipo grúas) */
+.corner-box{
   position:absolute;
-  top:20px;
+  top:18px;
   z-index:3;
-  color:rgba(255,255,255,0.85);
-  font-size:13px;
+  width:280px;
+  padding:14px 16px;
+  background:rgba(0,0,0,0.55);
+  border:1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  color:rgba(255,255,255,0.9);
+  font-size:14px;
   letter-spacing:1px;
   text-transform:uppercase;
-  max-width:240px;
   line-height:1.4;
   transition:0.5s ease;
 }
 
+/* posiciones */
 .corner-left{
-  left:20px;
+  left:18px;
   text-align:left;
 }
 
 .corner-right{
-  right:20px;
+  right:18px;
   text-align:right;
 }
 
@@ -207,9 +211,9 @@ p{
   .hero-logo img{height:260px;}
   h1{font-size:30px;}
 
-  .corner-slogan{
+  .corner-box{
+    width:180px;
     font-size:11px;
-    max-width:160px;
   }
 }
 
@@ -229,9 +233,9 @@ p{
 
 <section class="hero">
 
-  <!-- ESQUINAS -->
-  <div class="corner-slogan corner-left" id="sloganLeft"></div>
-  <div class="corner-slogan corner-right" id="sloganRight"></div>
+  <!-- CUADROS ESQUINAS -->
+  <div class="corner-box corner-left" id="sloganLeft"></div>
+  <div class="corner-box corner-right" id="sloganRight"></div>
 
   <div class="hero-grid">
     <div class="img1"></div>
@@ -243,7 +247,7 @@ p{
   <div class="hero-content">
 
     <div class="hero-logo">
-      <img src="https://res.cloudinary.com/deod0oalc/image/upload/Logo-CIGAR_o1k60j.png" alt="CIGAR">
+      <img src="https://res.cloudinary.com/deod0oalc/image/upload/Logo-CIGAR_o1k60j.png">
     </div>
 
     <h1>Construimos el futuro</h1>
@@ -293,39 +297,21 @@ p{
 
 <script>
 const slogansLeft = [
-  "Ingeniería estructural de alto impacto",
-  "Estructuras que construyen el futuro",
-  "Visión industrial aplicada al acero",
-  "Solidez en cada proyecto",
-  "Diseño estructural de alto rendimiento",
-  "Ingeniería que da forma a grandes obras",
-  "Precisión aplicada a estructuras metálicas",
-  "Construimos la base de la industria",
-  "Soluciones en acero de nivel industrial",
-  "Estructuras pensadas para perdurar",
-  "Innovación en ingeniería estructural",
-  "El acero convertido en confianza",
-  "Proyectos que sostienen ciudades",
-  "Calidad estructural sin concesiones",
-  "Ingeniería aplicada con excelencia"
+"Ingeniería estructural de alto impacto",
+"Estructuras que construyen el futuro",
+"Visión industrial aplicada al acero",
+"Solidez en cada proyecto",
+"Diseño estructural de alto rendimiento",
+"Precisión aplicada a estructuras metálicas"
 ];
 
 const slogansRight = [
-  "Precisión en acero para grandes obras",
-  "Calidad estructural garantizada",
-  "Confianza en ingeniería moderna",
-  "Soluciones metálicas avanzadas",
-  "Estructuras de alto rendimiento",
-  "Montaje y fabricación con precisión",
-  "Ingeniería que respalda grandes proyectos",
-  "Acero diseñado para durar",
-  "Ejecución estructural profesional",
-  "Tecnología aplicada a la construcción",
-  "Estructuras para la industria moderna",
-  "Soporte técnico en cada proyecto",
-  "Ingeniería que impulsa el desarrollo",
-  "Solidez que respalda grandes obras",
-  "Excelencia en estructuras metálicas"
+"Precisión en acero para grandes obras",
+"Calidad estructural garantizada",
+"Confianza en ingeniería moderna",
+"Soluciones metálicas avanzadas",
+"Estructuras de alto rendimiento",
+"Montaje y fabricación con precisión"
 ];
 
 let i = 0;
@@ -342,11 +328,11 @@ function updateSlogans(){
     document.getElementById("sloganRight").style.opacity = 1;
 
     i = (i + 1) % slogansLeft.length;
-  }, 300);
+  }, 400);
 }
 
 updateSlogans();
-setInterval(updateSlogans, 4000);
+setInterval(updateSlogans, 6000);
 </script>
 
 </body>
