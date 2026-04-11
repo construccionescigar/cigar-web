@@ -86,14 +86,14 @@ nav a:hover{
   z-index:1;
 }
 
-/* CONTENIDO */
+/* CONTENIDO HERO */
 .hero-content{
   position:relative;
   z-index:2;
 }
 
 .hero-logo img{
-  height:440px; /* 🔥 DOBLE DEL ORIGINAL */
+  height:440px;
   margin-bottom:20px;
 }
 
@@ -123,11 +123,12 @@ p{
   transform:scale(1.05);
 }
 
-/* EMPRESA */
+/* EMPRESA (AHORA CONTINUIDAD OSCURA DEL HERO) */
 .empresa{
   padding:80px 20px;
-  background:white;
+  background:#0b0b0b;
   text-align:center;
+  color:white;
 }
 
 .empresa-contenido{
@@ -138,10 +139,11 @@ p{
 .empresa h2{
   font-size:32px;
   margin-bottom:20px;
+  color:white;
 }
 
 .empresa p{
-  color:#555;
+  color:#d0d0d0;
   line-height:1.6;
 }
 
@@ -153,11 +155,12 @@ p{
 }
 
 .stat{
-  background:#000;
+  background:#151515;
   color:white;
   padding:25px;
   border-radius:10px;
   transition:0.3s;
+  border:1px solid rgba(255,255,255,0.08);
 }
 
 .stat:hover{
@@ -178,7 +181,7 @@ p{
 
 /* RESPONSIVE */
 @media(max-width:600px){
-  .hero-logo img{height:260px;} /* proporcional en móvil */
+  .hero-logo img{height:260px;}
   h1{font-size:30px;}
 
   .hero-grid{
@@ -203,7 +206,6 @@ p{
 
 <section class="hero">
 
-  <!-- COLLAGE -->
   <div class="hero-grid">
     <div class="img1"></div>
     <div class="img2"></div>
@@ -211,7 +213,6 @@ p{
     <div class="img4"></div>
   </div>
 
-  <!-- CONTENIDO -->
   <div class="hero-content">
 
     <div class="hero-logo">
