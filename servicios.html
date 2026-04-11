@@ -10,10 +10,13 @@
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#f4f4f4;
+
+  /* 🔥 FONDO INDUSTRIAL NUEVO */
+  background:#0a0f14;
+  color:white;
 }
 
-/* 🔥 HEADER UNIFICADO (MISMO EN TODAS LAS PÁGINAS) */
+/* 🔥 HEADER UNIFICADO */
 header{
   background:#000;
   height:70px;
@@ -44,20 +47,31 @@ nav a:hover{
   color:#ffb400;
 }
 
-/* HEADER TITULO */
+/* TITULO PRINCIPAL */
 .page-header{
-  background:#111;
+  background:#111a22;
   color:white;
   text-align:center;
   padding:25px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-/* SERVICIOS */
+.page-header p{
+  color:#cfcfcf;
+}
+
+/* SECCIÓN */
 .servicios{
   padding:50px 20px;
   text-align:center;
 }
 
+.servicios h2{
+  color:#ffb400;
+  margin-bottom:25px;
+}
+
+/* GRID */
 .grid-servicios{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -66,18 +80,22 @@ nav a:hover{
   margin:auto;
 }
 
+/* CARD */
 .servicio{
-  background:white;
+  background:#121a22;
   border-radius:12px;
   overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,0.12);
+  box-shadow:0 5px 15px rgba(0,0,0,0.4);
+  border:1px solid rgba(255,255,255,0.08);
   transition:0.3s;
 }
 
 .servicio:hover{
-  transform:scale(1.03);
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
+/* IMAGEN */
 .servicio img{
   width:100%;
   height:180px;
@@ -85,9 +103,11 @@ nav a:hover{
   display:block;
 }
 
+/* TEXTO */
 .servicio h3{
   margin:0;
   padding:12px;
+  color:white;
 }
 
 </style>
@@ -95,7 +115,7 @@ nav a:hover{
 
 <body>
 
-<!-- 🔥 HEADER UNIFICADO -->
+<!-- HEADER -->
 <header>
 <nav>
   <a href="./index.html">Inicio</a>
@@ -105,44 +125,45 @@ nav a:hover{
 </nav>
 </header>
 
-<!-- TITULO DE PÁGINA -->
+<!-- TITULO -->
 <div class="page-header">
   <h1>Estructuras y Construcciones Cigar</h1>
   <p>Servicios industriales especializados</p>
 </div>
 
+<!-- SERVICIOS -->
 <section class="servicios">
 <h2>Servicios</h2>
 
 <div class="grid-servicios">
 
 <div class="servicio">
-<img src="https://res.cloudinary.com/deod0oalc/image/upload/Fabricaci%C3%B3n_estructura_v7jdk2.png" alt="Fabricación de estructuras">
+<img src="https://res.cloudinary.com/deod0oalc/image/upload/Fabricaci%C3%B3n_estructura_v7jdk2.png">
 <h3>Fabricación de estructuras</h3>
 </div>
 
 <div class="servicio">
-<img src="https://res.cloudinary.com/deod0oalc/image/upload/Montaje_estructura_qjbbs1.png" alt="Montaje de estructuras">
+<img src="https://res.cloudinary.com/deod0oalc/image/upload/Montaje_estructura_qjbbs1.png">
 <h3>Montaje de estructuras</h3>
 </div>
 
 <div class="servicio">
-<img src="https://res.cloudinary.com/deod0oalc/image/upload/Herrer%C3%ADa_general_f2zhjn.png" alt="Herrería en general">
+<img src="https://res.cloudinary.com/deod0oalc/image/upload/Herrer%C3%ADa_general_f2zhjn.png">
 <h3>Herrería en general</h3>
 </div>
 
 <div class="servicio">
-<img src="https://res.cloudinary.com/deod0oalc/image/upload/Suministro_lamina_dhvsvq.png" alt="Suministro de lámina">
+<img src="https://res.cloudinary.com/deod0oalc/image/upload/Suministro_lamina_dhvsvq.png">
 <h3>Suministro de lámina</h3>
 </div>
 
 <div class="servicio">
-<img src="https://res.cloudinary.com/deod0oalc/image/upload/Pintura_industrial_ve15yk.png" alt="Pintura industrial">
+<img src="https://res.cloudinary.com/deod0oalc/image/upload/Pintura_industrial_ve15yk.png">
 <h3>Pintura industrial</h3>
 </div>
 
 <div class="servicio">
-<img src="https://res.cloudinary.com/deod0oalc/image/upload/Calculo_industrial_m5ijfw.png" alt="Cálculo estructural">
+<img src="https://res.cloudinary.com/deod0oalc/image/upload/Calculo_industrial_m5ijfw.png">
 <h3>Cálculo estructural</h3>
 </div>
 
