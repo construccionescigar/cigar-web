@@ -14,17 +14,15 @@
   font-family:Arial,sans-serif;
 }
 
-/* 🔥 FONDO GLOBAL (SIN RECORTE) */
+/* 🔥 FONDO GLOBAL */
 body{
   color:white;
-
   background:url('https://res.cloudinary.com/deod0oalc/image/upload/dc9ae699-debc-4db3-a02b-761af378e440_ym67mn.jpg');
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
 }
 
-/* overlay global elegante */
 body::before{
   content:"";
   position:fixed;
@@ -50,14 +48,41 @@ nav a{
   text-decoration:none;
   margin:0 20px;
   font-weight:bold;
-  transition:0.3s;
 }
 
 nav a:hover{
   color:#ffb400;
 }
 
-/* CONTENEDOR AHORA TRANSPARENTE */
+/* 🧱 CUADROS ESQUINA */
+.corner-box{
+  position:fixed;
+  top:90px;
+  width:280px;
+  padding:14px 16px;
+  background:rgba(0,0,0,0.55);
+  border:1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  color:rgba(255,255,255,0.9);
+  font-size:14px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  line-height:1.4;
+  transition:0.5s ease;
+  z-index:999;
+}
+
+.corner-left{
+  left:18px;
+  text-align:left;
+}
+
+.corner-right{
+  right:18px;
+  text-align:right;
+}
+
+/* CONTENEDOR */
 .container{
   padding:100px 20px;
   text-align:center;
@@ -76,7 +101,6 @@ h1{
   margin-bottom:40px;
 }
 
-/* BOTONES */
 .tab{
   background:rgba(255,255,255,0.05);
   border:2px solid #ffb400;
@@ -87,13 +111,11 @@ h1{
   border-radius:8px;
   font-size:16px;
   font-weight:bold;
-  transition:all 0.3s ease;
 }
 
 .tab.active{
   background:#ffb400;
   color:black;
-  box-shadow:0 0 15px rgba(255,180,0,0.4);
 }
 
 .tab:hover{
@@ -110,7 +132,6 @@ h1{
   color:#ddd;
   line-height:1.8;
   font-size:17px;
-
   background:rgba(0,0,0,0.55);
   padding:25px;
   border-radius:12px;
@@ -119,6 +140,14 @@ h1{
 
 .tab-contenido.active{
   display:block;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .corner-box{
+    width:180px;
+    font-size:11px;
+  }
 }
 
 </style>
@@ -135,6 +164,10 @@ h1{
   </nav>
 </header>
 
+<!-- 🧱 ESQUINAS -->
+<div class="corner-box corner-left" id="sloganLeft"></div>
+<div class="corner-box corner-right" id="sloganRight"></div>
+
 <div class="container">
 
   <h1>Información Corporativa</h1>
@@ -148,31 +181,66 @@ h1{
   <div id="vision" class="tab-contenido active">
     <p>
       Ser una empresa líder en el sector metalmecánico a nivel nacional, reconocida por la calidad, 
-      innovación y cumplimiento en cada uno de nuestros proyectos, generando confianza y relaciones 
-      duraderas con nuestros clientes.
+      innovación y cumplimiento en cada uno de nuestros proyectos.
     </p>
   </div>
 
   <div id="trayectoria" class="tab-contenido">
     <p>
-      Con más de 20 años de experiencia, Grupo Cigar ha desarrollado proyectos industriales de gran relevancia 
-      en distintos sectores, consolidando su crecimiento a través de la excelencia operativa, compromiso y 
-      capacidad técnica.
+      Con más de 20 años de experiencia, Grupo Cigar ha desarrollado proyectos industriales de gran relevancia.
     </p>
   </div>
 
   <div id="cobertura" class="tab-contenido">
     <p>
-      Contamos con cobertura a nivel nacional, participando en proyectos a lo largo de todo México, desde el norte 
-      hasta el sur del país. Nuestra estructura operativa y capacidad de respuesta nos permiten atender de manera 
-      eficiente las necesidades de nuestros clientes en cualquier ubicación, garantizando calidad, cumplimiento y 
-      soluciones a la medida en cada proyecto.
+      Contamos con cobertura a nivel nacional, garantizando soluciones a la medida en cada proyecto.
     </p>
   </div>
 
 </div>
 
 <script>
+
+/* 🔁 SLOGANS INFO (empresa / confianza) */
+const slogansLeft = [
+"Trayectoria que respalda cada proyecto",
+"Experiencia en ingeniería estructural",
+"Confianza construida con resultados",
+"Liderazgo en soluciones metálicas",
+"Compromiso con la excelencia industrial",
+"Historia de crecimiento y calidad"
+];
+
+const slogansRight = [
+"Más de 20 años en la industria",
+"Proyectos que avalan nuestra experiencia",
+"Solidez en cada desarrollo estructural",
+"Ingeniería con visión empresarial",
+"Cumplimiento en cada entrega",
+"Confianza en cada estructura"
+];
+
+let i = 0;
+
+function updateSlogans(){
+  document.getElementById("sloganLeft").style.opacity = 0;
+  document.getElementById("sloganRight").style.opacity = 0;
+
+  setTimeout(() => {
+    document.getElementById("sloganLeft").innerText = slogansLeft[i];
+    document.getElementById("sloganRight").innerText = slogansRight[i];
+
+    document.getElementById("sloganLeft").style.opacity = 1;
+    document.getElementById("sloganRight").style.opacity = 1;
+
+    i = (i + 1) % slogansLeft.length;
+  }, 400);
+}
+
+updateSlogans();
+setInterval(updateSlogans, 6000);
+
+/* TABS */
 function mostrarTab(tab, e){
   const contenidos = document.querySelectorAll('.tab-contenido');
   const tabs = document.querySelectorAll('.tab');
@@ -183,6 +251,7 @@ function mostrarTab(tab, e){
   document.getElementById(tab).classList.add('active');
   e.target.classList.add('active');
 }
+
 </script>
 
 </body>
