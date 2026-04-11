@@ -72,21 +72,23 @@ nav a:hover{
   z-index:999;
 }
 
-.corner-left{
-  left:18px;
-  text-align:left;
-}
-
-.corner-right{
-  right:18px;
-  text-align:right;
-}
+.corner-left{ left:18px; text-align:left; }
+.corner-right{ right:18px; text-align:right; }
 
 /* CONTENEDOR */
 .container{
-  padding:100px 20px;
+  padding:140px 20px 100px; /* 👈 bajé contenido para dar espacio al logo */
   text-align:center;
-  position:relative;
+}
+
+/* 🏷️ LOGO */
+.page-logo{
+  margin-bottom:20px;
+}
+
+.page-logo img{
+  height:180px;   /* tamaño elegante */
+  max-width:90%;
 }
 
 /* TÍTULO */
@@ -121,7 +123,6 @@ h1{
 .tab:hover{
   background:#ffb400;
   color:black;
-  transform:translateY(-2px);
 }
 
 /* CONTENIDO */
@@ -144,10 +145,8 @@ h1{
 
 /* RESPONSIVE */
 @media(max-width:600px){
-  .corner-box{
-    width:180px;
-    font-size:11px;
-  }
+  .corner-box{ width:180px; font-size:11px; }
+  .page-logo img{ height:130px; }
 }
 
 </style>
@@ -170,6 +169,11 @@ h1{
 
 <div class="container">
 
+  <!-- 🏷️ LOGO NUEVO -->
+  <div class="page-logo">
+    <img src="https://res.cloudinary.com/deod0oalc/image/upload/Logo-CIGAR_o1k60j.png" alt="CIGAR">
+  </div>
+
   <h1>Información Corporativa</h1>
 
   <div class="tabs">
@@ -179,29 +183,22 @@ h1{
   </div>
 
   <div id="vision" class="tab-contenido active">
-    <p>
-      Ser una empresa líder en el sector metalmecánico a nivel nacional, reconocida por la calidad, 
-      innovación y cumplimiento en cada uno de nuestros proyectos.
-    </p>
+    <p>Ser una empresa líder en el sector metalmecánico a nivel nacional.</p>
   </div>
 
   <div id="trayectoria" class="tab-contenido">
-    <p>
-      Con más de 20 años de experiencia, Grupo Cigar ha desarrollado proyectos industriales de gran relevancia.
-    </p>
+    <p>Más de 20 años desarrollando proyectos industriales de alto nivel.</p>
   </div>
 
   <div id="cobertura" class="tab-contenido">
-    <p>
-      Contamos con cobertura a nivel nacional, garantizando soluciones a la medida en cada proyecto.
-    </p>
+    <p>Cobertura nacional con capacidad de respuesta en todo México.</p>
   </div>
 
 </div>
 
 <script>
 
-/* 🔁 SLOGANS INFO (empresa / confianza) */
+/* ESLOGANES INFORMACIÓN */
 const slogansLeft = [
 "Trayectoria que respalda cada proyecto",
 "Experiencia en ingeniería estructural",
@@ -240,13 +237,9 @@ function updateSlogans(){
 updateSlogans();
 setInterval(updateSlogans, 6000);
 
-/* TABS */
 function mostrarTab(tab, e){
-  const contenidos = document.querySelectorAll('.tab-contenido');
-  const tabs = document.querySelectorAll('.tab');
-
-  contenidos.forEach(c => c.classList.remove('active'));
-  tabs.forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-contenido').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
 
   document.getElementById(tab).classList.add('active');
   e.target.classList.add('active');
